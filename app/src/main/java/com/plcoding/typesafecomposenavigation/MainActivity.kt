@@ -24,6 +24,7 @@ import com.plcoding.typesafecomposenavigation.ui.theme.TypeSafeComposeNavigation
 import kotlinx.serialization.Serializable
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -58,6 +59,14 @@ class MainActivity : ComponentActivity() {
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Text(text = "${args.name}, ${args.age} years old")
+                            Button(
+                                onClick = {
+                                    navController.popBackStack()
+                                }
+                            ){
+                                Text(text="click me to go back")
+                            }
+
                         }
                     }
                 }
